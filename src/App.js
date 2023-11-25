@@ -1,4 +1,5 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Fragment } from "react";
+import { createBrowserRouter, NavLink, RouterProvider } from "react-router-dom";
 
 import RootLayout from "./Pages/RootLayout";
 import ProjectRoot from "./Pages/ProjectRoot";
@@ -12,10 +13,11 @@ function App() {
         {
           index: true,
           element: (
-            <h1>
-              Home page- this page will cotain the primary information about the
-              website
-            </h1>
+            <Fragment>
+              <NavLink to="/projects">
+                <button className="button-outline-rounded">Hire me!</button>
+              </NavLink>
+            </Fragment>
           ),
         },
         {
