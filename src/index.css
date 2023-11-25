@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dosis:wght@200;300;500;600;700;800&family=Fira+Sans:wght@100;200;300;400;500;600;800&family=Teko:wght@700&family=Tektur:wght@700&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +9,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root
+{
+  /* fonts */
+  --font-family:'cookie',sans-serif;
+
+  /* typo */
+  --fs-900:48.83px;
+  --fs-700:39.06px;
+  --fs-500:31.25px;
+  --fs-300:17px;
+  --fs-100:12px;
+
+  /* colors */
+  --color-primary:#000000;
+  --color-secondary:#474747;
+  --color-grey:#9C9C9C;
+  --color-white:#FFFFFF;
+
+  /* shadows */
+  --box-shadow:13px 9px 61px -17px rgba(0, 0, 0, 0.75);
 }
+
+/* have to create the font size for mobile and tablets */

@@ -1,25 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import RootLayout from "./Pages/RootLayout";
+import ProjectRoot from "./Pages/ProjectRoot";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        {
+          index: true,
+          element: (
+            <h1>
+              Home page- this page will cotain the primary information about the
+              website
+            </h1>
+          ),
+        },
+        {
+          path: "projects",
+          element: <ProjectRoot />,
+          children: [
+            {
+              index: true,
+              element: <h1>All Projects page</h1>,
+            },
+            {
+              path: ":projectId",
+              element: <ProjectRoot />,
+              children: [
+                { index: true, element: <h1>Project Detail page</h1> },
+                {
+                  path: "edit",
+                  element: <h1>Edit project detail page</h1>,
+                },
+              ],
+            },
+            {
+              path: "new",
+              element: <h1>create new project page</h1>,
+            },
+          ],
+        },
+        {
+          path: "user",
+          children: [
+            {
+              path: "login",
+              element: <h1>User login page</h1>,
+            },
+            {
+              path: "register",
+              element: <h1>User register page</h1>,
+            },
+            {
+              path: ":id",
+              element: <h1>User detail page</h1>,
+            },
+          ],
+        },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
