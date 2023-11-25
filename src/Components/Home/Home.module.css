@@ -1,6 +1,6 @@
 .home
 {
-    height: 80vh;
+    height: 70vh;
     display: flex;
     gap:3rem;
     align-items: center;
@@ -49,6 +49,11 @@ color:var(--color-secondary);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.action a button{
+    font-weight: 600;
+    font-size: 15px;
 }
 
 .landing-image

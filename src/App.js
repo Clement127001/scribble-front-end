@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { createBrowserRouter, NavLink, RouterProvider } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RootLayout from "./Pages/RootLayout";
 import ProjectRoot from "./Pages/ProjectRoot";
@@ -12,13 +12,7 @@ function App() {
       children: [
         {
           index: true,
-          element: (
-            <Fragment>
-              <NavLink to="/projects">
-                <button className="button-outline-rounded">Hire me!</button>
-              </NavLink>
-            </Fragment>
-          ),
+          element: <Home />,
         },
         {
           path: "projects",
