@@ -5,7 +5,9 @@ import RootLayout from "./Pages/RootLayout";
 import ProjectRoot from "./Pages/ProjectRoot";
 
 import ProjectsPage, { loader as projectsLoader } from "./Pages/ProjectsPage";
-import ProjectDetailPage from "./Pages/ProjectDetailPage";
+import ProjectDetailPage, {
+  loader as projectDetailLoader,
+} from "./Pages/ProjectDetailPage";
 import ErrorPage from "./Pages/ErrorPage";
 
 function App() {
@@ -32,7 +34,11 @@ function App() {
               path: ":projectId",
               element: <ProjectRoot />,
               children: [
-                { index: true, element: <ProjectDetailPage /> },
+                {
+                  index: true,
+                  element: <ProjectDetailPage />,
+                  loader: projectDetailLoader,
+                },
                 {
                   path: "edit",
                   element: <h1>Edit project detail page</h1>,

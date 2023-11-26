@@ -23,12 +23,39 @@
   --box-shadow: 13px 9px 61px -17px rgba(0, 0, 0, 0.75);
 }
 
+/*------------------------------*/
+/*    reseting for a website    */
+/*------------------------------*/
+
+/* box sizing */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* removing margin */
+
+p,
+picture,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
     padding: 2rem 4rem;
+    font-family: var(--font-family);
 }
 
 
@@ -45,7 +72,7 @@ body {
   font-weight: 600;
   letter-spacing: 1.2;
   background-color: var(--color-primary);
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   border:none;
   cursor:pointer;

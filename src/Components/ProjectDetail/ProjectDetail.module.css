@@ -1,0 +1,123 @@
+/* project detail */
+.details
+{
+padding: 2.5rem 2rem;
+}
+
+.details h1{
+    
+    font-size: var(--fs-900);
+    margin-bottom: 2rem;
+}
+.sub-title
+{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom:0.5rem;
+}
+
+.sub-title p
+{
+    font-size: var(--fs-300);
+    font-weight: 300;
+    color: var(--color-secondary);
+    margin-left: 1rem;
+}
+
+.para
+{
+   font-size: var(--fs-300);
+   color:var(--color-secondary)
+}
+.user
+{
+    display:flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile
+{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+
+    margin-bottom: 1rem;
+}
+
+.profile a img{
+    width: 60px;
+    border-radius: 50%;
+}
+
+.user-info h3
+{
+
+font-size: var(--fs-300);
+font-weight: 700;
+}
+
+.user-info p{
+
+    font-size: var(--fs-300);
+    font-weight: 300;
+}
+
+.image-container
+{
+    margin:3rem 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.image-container img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* cta section */
+.CTA
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+    margin-bottom:2rem;
+}
+
+.CTA a img{
+    width: 48px;
+    border-radius: 50%;
+}
+
+.CTA p{
+    font-size: var(--fs-300);
+        font-weight: 300;
+        color: var(--color-secondary);
+}
+
+/* more projects */
+
+.more-projects
+{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:1rem;
+    margin-block:3rem;
+    list-style: none;
+}
+
+.more-projects a img
+{
+    width: 100%;
+    border-radius: 16px;
+}
