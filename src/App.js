@@ -4,11 +4,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./Pages/RootLayout";
 import ProjectRoot from "./Pages/ProjectRoot";
 
+import ProjectsPage, { loader as projectsLoader } from "./Pages/ProjectsPage";
+import ProjectDetailPage from "./Pages/ProjectDetailPage";
+import ErrorPage from "./Pages/ErrorPage";
+
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <RootLayout />,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
@@ -20,13 +25,14 @@ function App() {
           children: [
             {
               index: true,
-              element: <h1>All Projects page</h1>,
+              element: <ProjectsPage />,
+              loader: projectsLoader,
             },
             {
               path: ":projectId",
               element: <ProjectRoot />,
               children: [
-                { index: true, element: <h1>Project Detail page</h1> },
+                { index: true, element: <ProjectDetailPage /> },
                 {
                   path: "edit",
                   element: <h1>Edit project detail page</h1>,
