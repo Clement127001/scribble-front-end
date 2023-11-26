@@ -2,7 +2,6 @@ import ProjectPreview from "../ProjectPreview/ProjectPreview";
 import classes from "./ProjectList.module.css";
 const ProjectList = ({ projects: proj }) => {
   const { projects } = proj;
-  console.log(projects);
   return (
     <section className={classes["projects-list"]}>
       {/* <Filters /> */}
