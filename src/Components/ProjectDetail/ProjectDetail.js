@@ -8,8 +8,6 @@ const ProjectDetails = ({ detail }) => {
 
   let projects = moreProjects.filter((project) => project);
 
-  console.log(projects);
-
   const moreProjectsComponent = projects.map((project, index) => (
     <li key={`other project ${index}`}>
       <NavLink to={`/projects/${project.projectId}`}>

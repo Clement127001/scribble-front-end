@@ -4,11 +4,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./Pages/RootLayout";
 import ProjectRoot from "./Pages/ProjectRoot";
 
+import UserDetailPage, {
+  loader as userDetailLoader,
+} from "./Pages/UserDetailPage";
 import ProjectsPage, { loader as projectsLoader } from "./Pages/ProjectsPage";
 import ProjectDetailPage, {
   loader as projectDetailLoader,
 } from "./Pages/ProjectDetailPage";
 import ErrorPage from "./Pages/ErrorPage";
+import RegisterUserPage from "./Pages/RegisterUserPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -60,11 +64,12 @@ function App() {
             },
             {
               path: "register",
-              element: <h1>User register page</h1>,
+              element: <RegisterUserPage />,
             },
             {
               path: ":id",
-              element: <h1>User detail page</h1>,
+              element: <UserDetailPage />,
+              loader: userDetailLoader,
             },
           ],
         },
