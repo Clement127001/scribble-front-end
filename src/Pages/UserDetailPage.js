@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { NavLink, Await, json, useLoaderData, defer } from "react-router-dom";
+import { Await, json, useLoaderData, defer } from "react-router-dom";
 import UserDetail from "../Components/UserDetail/UserDetail";
 
 import loading from "../Assets/loading-spinner.gif";

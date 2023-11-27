@@ -12,7 +12,9 @@ import ProjectDetailPage, {
   loader as projectDetailLoader,
 } from "./Pages/ProjectDetailPage";
 import ErrorPage from "./Pages/ErrorPage";
-import RegisterUserPage from "./Pages/RegisterUserPage";
+import RegisterUserPage, {
+  action as registerAction,
+} from "./Pages/RegisterUserPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -65,6 +67,7 @@ function App() {
             {
               path: "register",
               element: <RegisterUserPage />,
+              action: registerAction,
             },
             {
               path: ":id",
