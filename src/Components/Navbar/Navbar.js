@@ -1,11 +1,14 @@
-import React from "react";
 import classes from "./Navbar.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useRouteLoaderData } from "react-router-dom";
 import logo from "../../Assets/header-logo.png";
 import search from "../../Assets/Icons/search.png";
 import testUser from "../../Assets/test-user.jpg";
 
 const Navbar = () => {
+  const user = useRouteLoaderData("root");
+
+  // console.log(Object.keys(user));
+
   return (
     <nav className={classes.navbar}>
       <div className={classes.navList}>
@@ -29,7 +32,11 @@ const Navbar = () => {
           <button className="button-primary">Share Scrib</button>
         </NavLink>
 
-        <img src={testUser} alt="user" />
+        {user ? (
+          <img src={user.profile} alt="user-profile" />
+        ) : (
+          <NavLink to="/user/register">Login</NavLink>
+        )}
       </div>
     </nav>
   );

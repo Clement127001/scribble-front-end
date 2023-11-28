@@ -40,6 +40,7 @@ const projectsLoader = async () => {
     throw json({ status: 500 }, { message: "could not able to fetch data" });
   else {
     const projects = await response.json();
+    console.log(projects);
     return projects;
   }
 };

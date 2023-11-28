@@ -16,12 +16,16 @@ import RegisterUserPage, {
   action as registerAction,
 } from "./Pages/RegisterUserPage";
 
+import { userLoader, checkAuthLoader } from "./Util/auth";
+import UserLoginPage from "./Pages/UserLoginPage";
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      id: "root",
       element: <RootLayout />,
       errorElement: <ErrorPage />,
+      loader: userLoader,
       children: [
         {
           index: true,
@@ -48,12 +52,14 @@ function App() {
                 {
                   path: "edit",
                   element: <h1>Edit project detail page</h1>,
+                  loader: checkAuthLoader,
                 },
               ],
             },
             {
               path: "new",
               element: <h1>create new project page</h1>,
+              loader: checkAuthLoader,
             },
           ],
         },
@@ -62,7 +68,7 @@ function App() {
           children: [
             {
               path: "login",
-              element: <h1>User login page</h1>,
+              element: <UserLoginPage />,
             },
             {
               path: "register",

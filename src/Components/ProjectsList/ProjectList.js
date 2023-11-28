@@ -8,7 +8,7 @@ const ProjectList = ({ projects: proj }) => {
       <ul className={classes.projects}>
         {projects.map((project, index) => (
           <li key={"project" + index}>
-            <ProjectPreview proj={project.project} user={project.user} />
+            <ProjectPreview proj={project} />
           </li>
         ))}
       </ul>
